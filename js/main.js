@@ -34,7 +34,7 @@ const emails = ['francesco@gmail.com', 'antonio@gmail.com', 'giuseppe@gmail.com'
 console.log(emails)
 
 //dichato il bottone il check mail e la conferma
-const emailBtn = document.getElementById('emailbtn');
+const emailBtn = document.getElementById('emailBtn');
 const check = document.getElementById('check');
 const login = document.getElementById('login');
 
