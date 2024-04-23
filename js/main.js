@@ -15,16 +15,16 @@ button.addEventListener('click', function () {
 
     console.log(cpu);
 
-    cpu1.innerText = (cpu);
+    cpu1.innerHTML = (cpu);
     //dichiarazione risultato
     const result = document.getElementById("result");
     //casistiche
     if (player === cpu) {
-        result.innerText = ('Pareggio!')
+        result.innerHTML = ('Pareggio!')
     } else if (player > cpu) {
-        result.innerText = ('Hai Vinto =)!')
+        result.innerHTML = ('Hai Vinto =)!')
     } else if (player < cpu) {
-        result.innerText = ('Hai perso =(!')
+        result.innerHTML = ('Hai perso =(!')
     }
 })
 
@@ -38,20 +38,23 @@ const emailBtn = document.getElementById('emailBtn');
 const check = document.getElementById('check');
 const login = document.getElementById('login');
 
-check.value = ''
+var mail = false;
 
 emailBtn.addEventListener('click', function () {
 
-    for (let i = 0 ; i < emails.length; i++ ){
-        if (check.value == emails[0]){
-            login.innerText = ('benvenuto francesco');
-        } else if (check.value == emails[1]) {
-            login.innerText = ('benvenuto antonio');
-        } else if (check.value == emails [2]){
-            login.innerText = ("benvenuto giuseppe");
-        }else{
-            login.innerText = ('chi sei?');
+    for (let i = 0; i < emails.length; i++) {
+        const list = emails[i]
+        if (list == check.value) {
+            mail = true;
         }
     }
+
+    if (mail == true) {
+        login.innerHTML = ('benvenuto');
+
+    } else {
+        login.innerHTML = ('chi sei?');
+    }
+
 
 })
